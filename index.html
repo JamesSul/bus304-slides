@@ -305,6 +305,23 @@ On the right there should be something resembling a terminal called "context win
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-top:16px"><div style="display:flex;flex-direction:row;align-items:flex-start;gap:28px"><div style="flex:none;width:64px;height:64px;background:#002e5d;display:flex;align-items:center;justify-content:center"><p style="font-size:32px;line-height:1;font-weight:800;color:#ffffff">1</p></div><p style="font-size:32px;line-height:1.4;color:#0d1b2a;padding-top:6px">On the repository page, click <b>Add file</b> → <b>Upload files</b>.</p></div><div style="display:flex;flex-direction:row;align-items:flex-start;gap:28px"><div style="flex:none;width:64px;height:64px;background:#002e5d;display:flex;align-items:center;justify-content:center"><p style="font-size:32px;line-height:1;font-weight:800;color:#ffffff">2</p></div><p style="font-size:32px;line-height:1.4;color:#0d1b2a;padding-top:6px">Drag in the <b>images</b> folder itself, so its paths match the deck.</p></div><div style="display:flex;flex-direction:row;align-items:flex-start;gap:28px"><div style="flex:none;width:64px;height:64px;background:#002e5d;display:flex;align-items:center;justify-content:center"><p style="font-size:32px;line-height:1;font-weight:800;color:#ffffff">3</p></div><p style="font-size:32px;line-height:1.4;color:#0d1b2a;padding-top:6px">Click <b>Commit changes</b>. Do this once; reupload only new images.</p></div></div>
   </section>
 
+  <!-- 13 · Prompt: speaker version local, presentation version on GitHub (edit the text inside .prompt-text) -->
+  <section class="usm-slide usm-slide--prompt" aria-label="Prompt: two versions">
+    <div class="prompt-box">
+      <button class="prompt-copy" type="button" data-no-advance aria-label="Copy prompt" title="Copy prompt"><svg class="cp" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><svg class="ok" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button><span class="prompt-copy-tip" role="status">Copied</span>
+      <div class="prompt-text" style="font-size:34px">Make two versions of my HTML slide deck.
+1. Speaker version: save it as speaker.html in my working folder and keep it local. It keeps the speaker notes and the presenter view. Never upload it.
+2. Presentation version: create index.html from speaker.html with all speaker notes and presenter-view code removed, so the notes don't appear in the page source. Everything else, including image paths and interactive slides, must work the same.
+Upload index.html to my GitHub repository. Before uploading, check that it contains no speaker notes. From now on, I'll edit speaker.html only; regenerate index.html from it whenever I ask you to publish.</div>
+      <div class="prompt-bar" aria-hidden="true">
+        <span class="prompt-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="prompt-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span>
+        <span class="prompt-model">Claude <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        <span class="prompt-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <script>
