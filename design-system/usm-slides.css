@@ -1,0 +1,83 @@
+/* USM Slides — design system stylesheet.
+   Load Inter first:
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+   Colors, spacing and sizes mirror tokens.json; change both together. */
+
+:root {
+  --navy: #002e5d;
+  --navy-deep: #001f40;
+  --gold: #f5a706;
+  --surface: #ffffff;
+  --surface-subtle: #f3f5f8;
+  --line: #c9d1db;
+  --ink: #0d1b2a;
+  --ink-muted: #4a5a6e;
+  --on-navy: #ffffff;
+  --on-navy-muted: #b8c4d4;
+  --on-gold: var(--navy);
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-pill: 9999px;
+  --stroke-hairline: 2px;
+  --stroke-accent: 8px;
+  --accent-length: 120px;
+  --font-sans: Inter, "Helvetica Neue", Arial, system-ui, sans-serif;
+}
+
+body { margin: 0; font-family: var(--font-sans); color: var(--ink); background: var(--surface); }
+
+/* The slide canvas */
+.usm-slide {
+  position: relative; box-sizing: border-box; width: 1920px; height: 1080px; overflow: hidden;
+  padding: var(--space-12) var(--space-16);
+  display: flex; flex-direction: column;
+  background: var(--surface); color: var(--ink); font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+.usm-slide * { margin: 0; }
+.usm-slide--navy { background: var(--navy); color: var(--on-navy); }
+
+/* Text roles */
+.usm-eyebrow { font-size: 22px; line-height: 1.2; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); }
+.usm-slide--navy .usm-eyebrow { color: var(--gold); }
+.usm-display { font-size: 128px; line-height: .95; font-weight: 800; letter-spacing: -.03em; }
+.usm-h1 { font-size: 80px; line-height: 1; font-weight: 700; letter-spacing: -.02em; }
+.usm-h2 { font-size: 56px; line-height: 1.1; font-weight: 700; letter-spacing: -.015em; color: var(--navy); max-width: 1400px; }
+.usm-lead { font-size: 40px; line-height: 1.3; font-weight: 400; letter-spacing: -.005em; }
+.usm-body { font-size: 32px; line-height: 1.4; font-weight: 400; color: var(--ink); max-width: 1100px; }
+.usm-stat { font-size: 200px; line-height: .9; font-weight: 800; letter-spacing: -.04em; color: var(--navy); }
+.usm-caption { font-size: 22px; line-height: 1.35; font-weight: 500; color: var(--ink-muted); }
+.usm-slide--navy .usm-lead, .usm-slide--navy .usm-caption { color: var(--on-navy-muted); }
+
+/* The one decoration: a gold bar */
+.usm-bar { display: block; width: var(--accent-length); height: var(--stroke-accent); background: var(--gold); border: 0; }
+.usm-edge { position: absolute; left: 0; top: 0; bottom: 0; width: var(--stroke-accent); background: var(--gold); }
+
+/* Highlight a word: navy text on a gold field */
+.usm-mark { background: var(--gold); color: var(--on-gold); padding: 0 .12em; }
+
+/* Bullets: a short gold dash, square */
+.usm-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.usm-list li { position: relative; padding-left: 48px; }
+.usm-list li::before { content: ""; position: absolute; left: 0; top: .68em; width: 24px; height: 6px; background: var(--gold); }
+
+/* Footer */
+.usm-footer { position: absolute; left: var(--space-16); right: var(--space-16); bottom: 56px;
+  display: flex; justify-content: space-between; padding-top: var(--space-2);
+  border-top: var(--stroke-hairline) solid var(--line); }
+
+/* Panel */
+.usm-panel { background: var(--surface-subtle); padding: var(--space-6); border-radius: var(--radius-none); }
+
+/* Stacks */
+.usm-stack-4 > * + * { margin-top: var(--space-4); }
+.usm-stack-6 > * + * { margin-top: var(--space-6); }
+.usm-cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); }
