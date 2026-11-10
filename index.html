@@ -114,7 +114,7 @@
 <div style="display:flex;flex-direction:row;align-items:stretch;gap:16px;padding-top:32px">
 <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#f3f5f8;padding:48px">
 <p style="font-size:22px;line-height:1.2;font-weight:700;letter-spacing:3px;color:#002e5d">01</p>
-<h3 style="font-size:40px;line-height:1.15;font-weight:700;color:#002e5d">Brand source</h3>
+<h3 style="font-size:40px;line-height:1.15;font-weight:700;color:#002e5d"><a href="https://usm.maine.edu/office-of-marketing-and-strategic-communications/brand-guidelines-and-visual-identity/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Brand source</a></h3>
 <p style="font-size:32px;line-height:1.4;color:#0d1b2a">The colors to build from. Here, navy and gold from the USM logo.</p>
 </div>
 <div style="flex:none;width:64px;display:flex;align-items:center;justify-content:center"><svg aria-label="then" width="48" height="48" viewBox="0 0 48 48"><path d="M8 24h28M26 12l12 12-12 12" fill="none" stroke="#f5a706" stroke-width="6" stroke-linecap="square"/></svg></div>
@@ -362,7 +362,7 @@ Upload index.html to my GitHub repository. Before uploading, check that it conta
         if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen();
       }
     });
-    addEventListener('click', function (e) { show(e.clientX < innerWidth / 3 ? i - 1 : i + 1); });
+    addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) return; show(e.clientX < innerWidth / 3 ? i - 1 : i + 1); });
     fit();
     show((parseInt(location.hash.slice(1), 10) || 1) - 1);
   })();
